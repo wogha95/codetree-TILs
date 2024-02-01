@@ -9,8 +9,13 @@ function LCM (n, m) {
 }
 
 function GCD (n, m) {
-    if (n % m === 0) {
-        return m;
+    let [_n, _m] = [n, m];
+
+    while (_n % _m !== 0) {
+        const temp = _n % _m;
+        _n = _m;
+        _m = temp;
     }
-    return GCD (m, n % m);
+    
+    return _m;
 }
