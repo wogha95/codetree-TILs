@@ -5,7 +5,7 @@ lines.forEach(line => {
 })
 
 function LCM (n, m) {
-    return n * m / GCD(n, m);
+    return n * m / GCD(Math.max(n, m), Math.min(n, m));
 }
 
 function GCD (n, m) {
