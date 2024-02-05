@@ -8,10 +8,10 @@ function LCM (n, m) {
     if (n === 1 || m === 1) {
         return 1;
     }
-    
+
     const [min, max] = [Math.min(n, m), Math.max(n, m)];
     if (max % min === 0) {
-        return min;
+        return max;
     }
 
     return n * m / GCD(max, min);
