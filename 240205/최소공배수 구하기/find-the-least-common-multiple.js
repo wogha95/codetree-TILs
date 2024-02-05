@@ -17,6 +17,10 @@ function LCM (n, m) {
 }
 
 function GCD (n, m) {
+    if (m === 1) {
+        return 
+    }
+
     while (m !== 0) {
         const temp = n % m;
         n = m;
