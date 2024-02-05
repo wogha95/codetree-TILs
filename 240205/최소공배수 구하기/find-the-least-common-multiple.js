@@ -5,6 +5,10 @@ lines.forEach(line => {
 })
 
 function LCM (n, m) {
+    if (n === 1 || m === 1) {
+        return 1;
+    }
+    
     const [min, max] = [Math.min(n, m), Math.max(n, m)];
     if (max % min === 0) {
         return min;
