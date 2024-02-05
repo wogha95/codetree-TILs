@@ -5,21 +5,20 @@ lines.forEach(line => {
 })
 
 function LCM (n, m) {
-    if (Math.max(n, m) % Math.min(n, m) === 0) {
-        return Math.min(n, m);
+    const [min, max] = [Math.min(n, m), Math.max(n, m)];
+    if (max % min === 0) {
+        return min;
     }
 
-    return n * m / GCD(n, m);
+    return n * m / GCD(max, min);
 }
 
 function GCD (n, m) {
-    let [_n, _m] = [Math.max(n, m), Math.min(n, m)];
-
-    while (_m !== 0) {
-        const temp = _n % _m;
-        _n = _m;
-        _m = temp;
+    while (m !== 0) {
+        const temp = n % m;
+        n = m;
+        m = temp;
     }
     
-    return _n;
+    return n;
 }
