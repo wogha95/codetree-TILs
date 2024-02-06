@@ -17,18 +17,13 @@ function checkExistence(year, month, day) {
         return day <= 30;
     }
 
-    const isLeapYear3 = year % 4 === 0 && year % 100 === 0 && year % 400 === 0;
-    if (isLeapYear3) {
+    const isDividedBy4 = year % 4 === 0;
+    const isDividedBy100 = year % 100 === 0;
+    const isDividedBy400 = year % 400 === 0;
+    if (isDividedBy4 && isDividedBy100 && isDividedBy400 || isDividedBy4 && !isDividedBy100 || isDividedBy4) {
         return day <= 29;
     }
-    
-    const isLeapYear2 = year % 4 === 0 && year % 100 === 0;
-    if (isLeapYear2) {
-        return day <= 28;
-    }
-
-    const isLeapYear1 = year % 4 === 0;
-    return isLeapYear1 ? day <= 29 : day <= 28;
+    return day <= 28;
 }
 
 function getSeason(month) {
