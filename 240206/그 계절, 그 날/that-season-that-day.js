@@ -17,7 +17,7 @@ function checkExistence(year, month, day) {
         return day <= 30;
     }
 
-    const isNotLeapYear = year % 4 !== 0 || (year % 100 === 0 && year !== 400);
+    const isNotLeapYear = year % 4 !== 0 || (year % 4 === 0 && year % 100 === 0 && year !== 400);
     return isNotLeapYear ? day <= 28 : day <= 29;
 }
 
