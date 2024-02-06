@@ -1,4 +1,4 @@
-const lines = require("fs").readFileSync(0).toString().split("\n")
+const lines = require("fs").readFileSync(0).toString().trim().split("\n")
 lines.forEach(line => {
     const [year, month, day] = line.split(' ').map(n => Number(n));
 
