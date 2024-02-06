@@ -15,7 +15,7 @@ function checkExistence(year, month, day) {
 
     if (month === 2) {
         const isLeapYear1 = year % 4 === 0;
-        const isLeapYear2 = year % 4 === 0 && year % 100 !== 0;
+        const isLeapYear2 = !(year % 4 === 0 && year % 100 === 0);
         const isLeapYear3 = year % 4 === 0 && year % 100 === 0 && year % 400 === 0;
         return isLeapYear3 || isLeapYear2 || isLeapYear1 ? day <= 29 : day <= 28;
     }
