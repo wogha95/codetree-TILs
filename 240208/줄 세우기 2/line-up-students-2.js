@@ -25,13 +25,13 @@ function compare(a, b) {
         return 1;
     }
 
-    if (a.weight < b.weight) {
+    if (a.weight > b.weight) {
         return -1;
-    } else if (a.weight > b.weight) {
+    } else if (a.weight < b.weight) {
         return 1;
     }
 
-    return -1;
+    return 1;
 }
 
 function print(array) {
