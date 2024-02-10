@@ -5,7 +5,7 @@ const [m1, d1, m2, d2] = lines[0].map(n => Number(n));
 const A = lines[1][0];
 
 const [id1, id2] = [getIdNumber(m1, d1) - getGap(A), getIdNumber(m2, d2) - getGap(A)];
-console.log(Math.floor((id2 - id1) / 7) + 1);
+console.log(Math.ceil((id2 - id1) / 7));
 
 function getIdNumber(month, day) {
     const monthsOf31 = [1, 3, 5, 7, 8, 10, 12];
