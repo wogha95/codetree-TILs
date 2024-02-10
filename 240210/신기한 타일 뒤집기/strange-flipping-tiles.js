@@ -13,16 +13,19 @@ function getResult(orderList) {
     })
 
     function move(total, order) {
-        const distance = Number(order[0]);
+        const distance = Number(order[0]) - 1;
         const direction = order[1];
+        const reversedDirection = getReversedDirection(direction);
 
-        for (let index = 0; index < distance; index++) {
-            const reversedDirection = getReversedDirection(direction);
+        for (let index = 0; index <= distance; index++) {
+            const nextIndex = total.currentIndex + (direction === 'R' ? index : (-1 * index));
             total[direction] += 1;
-            total[reversedDirection] = Math.max(0, total[reversedDirection] - 1);
-            total.array[total.currentIndex + index] = direction;
+            if (total.array[nextIndex] !== null && total.array[nextIndex] !== direction) {
+                total[reversedDirection] = Math.max(0, total[reversedDirection] - 1);
+            }
+            total.array[nextIndex] = direction;
         }
-        total.currentIndex += direction === 'R' ? distance - 1 : (-1 * (distance - 1));
+        total.currentIndex += direction === 'R' ? distance : (-1 * distance);
 
         return total;
     }
