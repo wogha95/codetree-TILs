@@ -19,7 +19,10 @@ function getResult(orderList) {
 
         for (let index = 0; index <= distance; index++) {
             const nextIndex = total.currentIndex + (direction === 'R' ? index : (-1 * index));
-            total[direction] += 1;
+            
+            if (total.array[nextIndex] !== direction) {
+                total[direction] += 1;
+            }
             if (total.array[nextIndex] !== null && total.array[nextIndex] !== direction) {
                 total[reversedDirection] = Math.max(0, total[reversedDirection] - 1);
             }
