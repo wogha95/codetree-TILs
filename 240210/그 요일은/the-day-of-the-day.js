@@ -4,7 +4,7 @@ const lines = rawLines.map(line => line.split(' '));
 const [m1, d1, m2, d2] = lines[0].map(n => Number(n));
 const A = lines[1][0];
 
-const [id1, id2] = [getIdNumber(m1, d1) - getGap(A), getIdNumber(m2, d2) - getGap(A)];
+const [id1, id2] = [getIdNumber(m1, d1), getIdNumber(m2, d2)];
 console.log(Math.ceil((id2 - id1) / 7));
 
 function getIdNumber(month, day) {
@@ -19,23 +19,4 @@ function getIdNumber(month, day) {
         }
         return sum + 30;
     }, 0)
-}
-
-function getGap(str) {
-    switch(str) {
-        case 'Mon':
-            return 0;
-        case 'Tue':
-            return 1;
-        case 'Wed':
-            return 2;
-        case 'Thu':
-            return 3;
-        case 'Fri':
-            return 4;
-        case 'Sat':
-            return 5;
-        case 'Sun':
-            return 6;
-    }
 }
