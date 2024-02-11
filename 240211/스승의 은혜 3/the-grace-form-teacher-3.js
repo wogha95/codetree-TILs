@@ -13,6 +13,10 @@ function getResult(gifts) {
     return maxCount;
 
     function recursive(totalBudget, count, currentIndex, isUsedCoupon) {
+        if (B < totalBudget) {
+            return;
+        }
+        
         if (currentIndex === N) {
             if (totalBudget <= B) {
                 maxCount = Math.max(maxCount, count);
