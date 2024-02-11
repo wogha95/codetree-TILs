@@ -12,12 +12,12 @@ function getResult(gifts) {
 
     return maxCount;
 
-    function recursive(totalBudget, count, currentIndex, isUsedCoupon) {
-        if (B < totalBudget) {
+    function recursive(cost, count, currentIndex, isUsedCoupon) {
+        if (B < cost) {
             return;
         }
 
-        if (totalBudget <= B) {
+        if (cost <= B) {
             maxCount = Math.max(maxCount, count);
         }
         if (currentIndex === N) {
@@ -25,8 +25,8 @@ function getResult(gifts) {
         }
 
         const [p, s] = gifts[currentIndex];
-        recursive(totalBudget + p + s, count + 1, currentIndex + 1, isUsedCoupon);
-        recursive(totalBudget, count, currentIndex + 1, isUsedCoupon);
-        !isUsedCoupon && recursive(totalBudget + p / 2 + s, count + 1, currentIndex + 1, true);
+        recursive(cost + p + s, count + 1, currentIndex + 1, isUsedCoupon);
+        recursive(cost, count, currentIndex + 1, isUsedCoupon);
+        !isUsedCoupon && recursive(cost + p / 2 + s, count + 1, currentIndex + 1, true);
     }
 }
