@@ -16,11 +16,11 @@ function getResult(gifts) {
         if (B < totalBudget) {
             return;
         }
-        
+
+        if (totalBudget <= B) {
+            maxCount = Math.max(maxCount, count);
+        }
         if (currentIndex === N) {
-            if (totalBudget <= B) {
-                maxCount = Math.max(maxCount, count);
-            }
             return;
         }
 
