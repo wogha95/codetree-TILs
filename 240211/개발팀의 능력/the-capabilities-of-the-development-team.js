@@ -11,7 +11,7 @@ function getResult(numberList) {
         recursiveTeam(start, [], [], 0);
     }
 
-    return minGap;
+    return minGap === Number.MAX_SAFE_INTEGER ? -1 : minGap;
 
     function recursiveTeam(team1Index, team2, team3, currentIndex) {
         if (currentIndex === 5) {
