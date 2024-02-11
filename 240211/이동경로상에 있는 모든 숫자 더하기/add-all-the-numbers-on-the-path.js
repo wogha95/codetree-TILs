@@ -18,18 +18,18 @@ function getResult() {
     let direction = 0;
 
     return orders.reduce((sum, order) => {
-        const isMove = operate(order);
-        return sum + (isMove ? square[currentR][currentC] : 0);
+        const isNotMove = operate(order);
+        return sum + (isNotMove ? 0 : square[currentR][currentC]);
     }, square[CENTER][CENTER])
 
     function operate(order) {
         if (order === 'L') {
             direction = (direction + 3) % 4;
-            return false;
+            return true;
         }
         if (order === 'R') {
             direction = (direction + 1) % 4;
-            return false;
+            return true;
         }
         if (order === 'F') {
             const isOutRangeR = currentR + moveR[direction] < 0 || N <= currentR + moveR[direction];
@@ -42,7 +42,7 @@ function getResult() {
                 currentC = currentC + moveC[direction];
             }
 
-            return !isOutRangeR || !isOutRangeC;
+            return isOutRangeR || isOutRangeC;
         }
     }
 }
