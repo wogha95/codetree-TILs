@@ -6,7 +6,7 @@ const result = getResult(lines.slice(1));
 console.log(result);
 
 function getResult(gifts) {
-    let maxCount = Number.MIN_SAFE_INTEGER;
+    let maxCount = 0;
 
     recursive(0, 0, 0, false);
 
@@ -24,8 +24,9 @@ function getResult(gifts) {
             return;
         }
 
-        recursive(totalBudget + gifts[currentIndex][0] + gifts[currentIndex][1], count + 1, currentIndex + 1, isUsedCoupon);
+        const [p, s] = gifts[currentIndex];
+        recursive(totalBudget + p + s, count + 1, currentIndex + 1, isUsedCoupon);
         recursive(totalBudget, count, currentIndex + 1, isUsedCoupon);
-        !isUsedCoupon && recursive(totalBudget + gifts[currentIndex][0] / 2 + gifts[currentIndex][1], count + 1, currentIndex + 1, true);
+        !isUsedCoupon && recursive(totalBudget + p / 2 + s, count + 1, currentIndex + 1, true);
     }
 }
