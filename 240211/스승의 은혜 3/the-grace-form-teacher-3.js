@@ -10,7 +10,7 @@ function getResult(giftList) {
     let filteredGiftList = null;
 
     for (let index = 0; index < N; index++) {
-        filteredGiftList = giftList.filter((_, i) => i !== index).sort((a, b) => a.p + a.s - b.p - b.s);
+        filteredGiftList = giftList.filter((_, i) => i !== index).sort((a, b) => a[0] + a[1] - b[0] - b[1]);
         recursive(giftList[index][0] / 2 + giftList[index][1], 1, 0);
     }
 
