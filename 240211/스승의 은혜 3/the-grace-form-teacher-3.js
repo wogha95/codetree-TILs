@@ -10,12 +10,12 @@ function getResult(giftList) {
 
     for (let index = 0; index < N; index++) {
         const filteredGiftList = giftList.filter((_, i) => i !== index);
-        recursive(filteredGiftList, giftList[index][0] + giftList[index][1], 1, 0, false);
+        recursive(filteredGiftList, giftList[index][0] + giftList[index][1], 1, 0);
     }
 
     return maxCount;
 
-    function recursive(filteredGiftList, cost, count, currentIndex, isUsedCoupon) {
+    function recursive(filteredGiftList, cost, count, currentIndex) {
         if (B < cost) {
             return;
         }
@@ -26,8 +26,7 @@ function getResult(giftList) {
         }
 
         const [p, s] = filteredGiftList[currentIndex];
-        recursive(filteredGiftList, cost + p + s, count + 1, currentIndex + 1, isUsedCoupon);
-        recursive(filteredGiftList, cost, count, currentIndex + 1, isUsedCoupon);
-        !isUsedCoupon && recursive(filteredGiftList, cost + p / 2 + s, count + 1, currentIndex + 1, true);
+        recursive(filteredGiftList, cost + p + s, count + 1, currentIndex + 1);
+        recursive(filteredGiftList, cost, count, currentIndex + 1);
     }
 }
