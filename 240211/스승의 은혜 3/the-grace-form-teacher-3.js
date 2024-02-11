@@ -17,9 +17,7 @@ function getResult(gifts) {
             return;
         }
 
-        if (cost <= B) {
-            maxCount = Math.max(maxCount, count);
-        }
+        maxCount = Math.max(maxCount, count);
         if (currentIndex === N) {
             return;
         }
