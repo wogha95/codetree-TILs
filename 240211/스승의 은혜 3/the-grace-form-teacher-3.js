@@ -2,10 +2,10 @@ const rawLines = require("fs").readFileSync(0).toString().trim().split("\n")
 const lines = rawLines.map(line => line.split(' ').map(n => Number(n)));
 
 const [N, B] = lines[0];
-const result = getResult(lines.slice(1));
+const result = getResult(lines.slice(1).sort((a, b) => b.p + b.s - a.p - a.s));
 console.log(result);
 
-function getResult(gifts) {
+function getResult(giftList) {
     let maxCount = 0;
 
     recursive(0, 0, 0, false);
@@ -22,7 +22,7 @@ function getResult(gifts) {
             return;
         }
 
-        const [p, s] = gifts[currentIndex];
+        const [p, s] = giftList[currentIndex];
         recursive(cost + p + s, count + 1, currentIndex + 1, isUsedCoupon);
         recursive(cost, count, currentIndex + 1, isUsedCoupon);
         !isUsedCoupon && recursive(cost + p / 2 + s, count + 1, currentIndex + 1, true);
