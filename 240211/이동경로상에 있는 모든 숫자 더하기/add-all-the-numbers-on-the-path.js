@@ -2,6 +2,7 @@ const rawLines = require("fs").readFileSync(0).toString().trim().split("\n")
 const lines = rawLines.map(line => line.split(' '));
 
 const [N] = lines[0].map(n => Number(n));
+const CENTER = Math.floor(N / 2);
 const orders = lines[1][0].split('');
 const square = lines.slice(2).map(line => line.map(n => Number(n)));
 const visited = Array.from({length: N}, () => Array.from({length: N}, () => false));
@@ -14,15 +15,15 @@ function getResult() {
         [-1, 0, -1, 0],
         [0, 1, 0, -1],
     ];
-    let [currentR, currentC] = [Math.floor(N / 2), Math.floor(N / 2)];
+    let [currentR, currentC] = [CENTER, CENTER];
     let direction = 0;
 
-    visited[Math.floor(N / 2)][Math.floor(N / 2)] = true;
+    visited[CENTER][CENTER] = true;
 
     return orders.reduce((sum, order) => {
         const newNumber = operate(order);
         return sum + newNumber;
-    }, square[Math.floor(N / 2)][Math.floor(N / 2)])
+    }, square[CENTER][CENTER])
 
     function operate(order) {
         if (order === 'L') {
@@ -43,9 +44,10 @@ function getResult() {
             if (!isOutRangeC) {
                 currentC = currentC + moveC[direction];
             }
+            const isVisited = visited[currentR][currentC];
             visited[currentR][currentC] = true;
 
-            return isOutRangeR || isOutRangeC ? 0 : square[currentR][currentC];
+            return isVisited || isOutRangeR || isOutRangeC ? 0 : square[currentR][currentC];
         }
     }
 }
