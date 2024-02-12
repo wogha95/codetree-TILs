@@ -17,10 +17,6 @@ function getResult(giftList) {
     return maxCount;
 
     function recursive(cost, count, currentIndex) {
-        if (B < cost) {
-            return;
-        }
-
         maxCount = Math.max(maxCount, count);
         if (currentIndex === N - 1) {
             return;
