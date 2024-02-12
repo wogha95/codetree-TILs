@@ -10,7 +10,7 @@ function getResult(giftList) {
     let filteredGiftList = null;
 
     for (let index = 0; index < N; index++) {
-        filteredGiftList = giftList.filter((_, i) => i !== index).sort((a, b) => a[0] + a[1] - b[0] - b[1]);
+        filteredGiftList = giftList.filter((_, i) => i !== index).map(([p, s]) => p + s).sort((a, b) => a - b);
         recursive(giftList[index][0] / 2 + giftList[index][1], 1, 0);
     }
 
@@ -22,11 +22,10 @@ function getResult(giftList) {
             return;
         }
 
-        const [p, s] = filteredGiftList[currentIndex];
-        if (B < cost + p + s) {
+        const ps = filteredGiftList[currentIndex];
+        if (B < cost + ps) {
             return;
         }
-        recursive(cost + p + s, count + 1, currentIndex + 1);
-        recursive(cost, count, currentIndex + 1);
+        recursive(cost + ps, count + 1, currentIndex + 1);
     }
 }
