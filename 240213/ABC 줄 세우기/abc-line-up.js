@@ -10,17 +10,17 @@ function getResult(alphabetList) {
     let count = 0;
 
     while (true) {
-        let isChanged = false;
+        let isNotChanged = true;
         for (let index = 0; index < N - 1; index++) {
             if (codeList[index] > codeList[index + 1]) {
                 const temp = codeList[index];
                 codeList[index] = codeList[index + 1];
                 codeList[index + 1] = temp;
                 count += 1;
-                isChanged = true;
+                isNotChanged = false;
             }
         }
-        if (isChanged) {
+        if (isNotChanged) {
             break;
         }
     }
