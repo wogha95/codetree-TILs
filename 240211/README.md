@@ -4,11 +4,11 @@
 24년 02월 11일 목표(90px)를 달성했어요🥳.
 
 ![240xp](https://img.shields.io/badge/EXP-240xp-%235cb85c.svg?for-the-badge)
-![2일째](https://img.shields.io/badge/연속학습-2일째-%23E34F26.svg?for-the-badge)
+![0일째](https://img.shields.io/badge/연속학습-0일째-%23E34F26.svg?for-the-badge)
 
 |총 문제수|획득 경험치|연속 학습|
 |---:|---:|---|
-7|240xp|2일째🔥|
+7|240xp|0일째❄️|
 
 |교재|이름|난이도|상태|최근 제출 코드|
 |---|---|:---:|:---:|---|
@@ -18,7 +18,7 @@
 |[Novice Mid / 완전탐색 I / 자리 수 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[테스트]특정 수와 근접한 합](https://www.codetree.ai/missions/5/problems/sum-close-to-particular-number)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/wogha95/codetree-TILs/blob/main/240211/%ED%8A%B9%EC%A0%95%20%EC%88%98%EC%99%80%20%EA%B7%BC%EC%A0%91%ED%95%9C%20%ED%95%A9/sum-close-to-particular-number.js)|
 |[Novice Mid / 완전탐색 I / 구간 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[테스트]밭의 높이를 고르게하기](https://www.codetree.ai/missions/5/problems/equalizing-the-height-of-the-field)|![쉬움][easy]|![Passed][passed]|[링크](https://github.com/wogha95/codetree-TILs/blob/main/240211/%EB%B0%AD%EC%9D%98%20%EB%86%92%EC%9D%B4%EB%A5%BC%20%EA%B3%A0%EB%A5%B4%EA%B2%8C%ED%95%98%EA%B8%B0/equalizing-the-height-of-the-field.js)|
 |[Novice Mid / 완전탐색 I / 자리 마다 숫자를 정하는 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[테스트]개발팀의 능력](https://www.codetree.ai/missions/5/problems/the-capabilities-of-the-development-team)|![보통][medium]|![Passed][passed]|[링크](https://github.com/wogha95/codetree-TILs/blob/main/240211/%EA%B0%9C%EB%B0%9C%ED%8C%80%EC%9D%98%20%EB%8A%A5%EB%A0%A5/the-capabilities-of-the-development-team.js)|
-|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[테스트]스승의 은혜 3](https://www.codetree.ai/missions/5/problems/the-grace-form-teacher-3)|![보통][medium]|![Failed][failed]|[링크](https://github.com/wogha95/codetree-TILs/blob/main/240211/%EC%8A%A4%EC%8A%B9%EC%9D%98%20%EC%9D%80%ED%98%9C%203/the-grace-form-teacher-3.js)|
+|[Novice Mid / 완전탐색 II / 물체 단위로 완전탐색](https://www.codetree.ai/missions?missionId=5)|[[테스트]스승의 은혜 3](https://www.codetree.ai/missions/5/problems/the-grace-form-teacher-3)|![보통][medium]|![Passed][passed]|[링크](https://github.com/wogha95/codetree-TILs/blob/main/240211/%EC%8A%A4%EC%8A%B9%EC%9D%98%20%EC%9D%80%ED%98%9C%203/the-grace-form-teacher-3.js)|
 
 
 * 획득 경험치: 해설을 보지 않고 푼 문제에 한해 최초 1회 경험치를 획득하실 수 있습니다.
